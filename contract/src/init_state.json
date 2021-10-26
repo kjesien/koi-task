@@ -1,0 +1,12 @@
+{
+  "owner": "lys_U4yoRPQFchfPBjus101Brx-OTjlhsthiqjVC5GE",
+  "title": "Koi Task 0.0.1",
+  "name": "Clock AR Price",
+  "description": "Clock with AR price",
+  "ticker": "GNAR",
+  "balances": {
+    "lys_U4yoRPQFchfPBjus101Brx-OTjlhsthiqjVC5GE": 1
+  },
+  "contentType": "text/html",
+  "tags": []
+}

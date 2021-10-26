@@ -1,0 +1,31 @@
+{
+  "name": "koi-task-contract",
+  "version": "1.0.0",
+  "description": "Simple Atomic NFT with clock and AR price - contact part",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjesien/koi-task.git"
+  },
+  "author": "kjesien",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "rollup": "^2.58.3",
+    "rollup-plugin-node-polyfills": "^0.2.1"
+  },
+  "scripts": {
+    "build": "rollup --config ./rollup.config.js",
+    "deploy": "yarn build && node ./bin/deploy.js koi-task"
+  },
+  "dependencies": {
+    "arweave": "^1.10.18",
+    "dotenv": "^10.0.0",
+    "smartweave": "^0.4.46"
+  }
+}
