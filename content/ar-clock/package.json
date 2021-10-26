@@ -7,16 +7,28 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
+    "glob": "^7.2.0",
+    "path": "^0.12.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "build": "yarn run build:react && yarn run build:bundle",
+    "build:react": "react-scripts build",
+    "build:bundle": "webpack --config webpack.config.js",
+    "blastoff": "yarn build && yarn arweave:pack && yarn deploy",
+    "deploy": "node blastoff.js",
+    "arweave:pack": "arweave package build/index.html pkg/index.html",
+    "arweave:deploy_soft": "arweave deploy pkg/index.html --package",
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.7.2"
   },
   "eslintConfig": {
     "extends": [

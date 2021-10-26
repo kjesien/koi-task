@@ -4,7 +4,7 @@ import nodePolyfills from "rollup-plugin-node-polyfills";
 
 export default [
   {
-    input: "src/index.ts",
+    input: "src/index.js",
     output: {
       file: "dist/koi-task-contract.js",
       format: "cjs",
