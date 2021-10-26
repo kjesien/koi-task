@@ -1,6 +1,8 @@
 const fs = require("fs");
 const Arweave = require("arweave");
 const smartweave = require("smartweave");
+const path = require("path");
+
 require("dotenv").config();
 
 const arweave = Arweave.init({
@@ -17,15 +19,22 @@ if (!walletPath) throw new Error("WALLET_LOCATION not specified in .env");
 const contract = process.argv[2];
 if (!contract) throw new Error("Contract name not specified");
 
-const wallet = JSON.parse(fs.readFileSync(walletPath));
-// console.log('wallet', wallet)
+const wallet = JSON.parse(fs.readFileSync(path.normalize(walletPath)));
+
 const src = fs.readFileSync(`dist/${contract}.js`);
-const state = fs.readFileSync(`src/${contract}/init_state.json`);
+const state = fs.readFileSync(`src/init_state.json`);
+
+console.log("-----------------");
 
 async function deploy() {
-  const id = await smartweave.createContract(arweave, wallet, src, state, {
-    reward: "100000000",
-  });
+  const id = await smartweave.createContract(
+    arweave,
+    wallet,
+    src.toString(),
+    state.toString(),
+    "100000000"
+  );
+
   console.log(
     `Deployed ${contract} Contract with ID ${id}. Click to view: https://arweave.net/tx/${id}`
   );
