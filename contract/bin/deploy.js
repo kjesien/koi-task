@@ -32,7 +32,7 @@ async function deploy() {
     wallet,
     src.toString(),
     state.toString(),
-    "100000000"
+    "110000000"
   );
 
   console.log(

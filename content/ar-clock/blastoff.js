@@ -3,7 +3,7 @@ const fs = require("fs");
 const Arweave = require("arweave");
 const KOII_CONTRACT = "13v4C8OEFw2uX3QlR2eSV2eH4Bc0BWuhDjgcFaGVEg0";
 const ATTENTION_CONTRACT = "CdPAQNONoR83Shj3CbI_9seC-LqgI1oLaRJhSwP90-o";
-var contractSrc = "Fqk2C8B3NkZrIAGwnDGujgdekvh-DAepML4-8Md3KAY";
+var contractSrc = "N-pZNU9HgpUxXLcLcT_giRG61vpCLQsjLiwuifTyKs4";
 
 require("dotenv").config();
 
